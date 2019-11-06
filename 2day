@@ -187,6 +187,434 @@ print(dict1,type(dict1))
 
 
 #2-4wp
+#其他数据类型转换成字典
+
+# str1 = ""
+# dict1 = dict(str1)
+# print(type(dict1))
+
+# #l列表转换成字典，如果要有意义，则必须是二级的列表，并且第二级里面必须只有两个元素才可以
+# L1 = [["红人","小花"],("小明","大红花")]
+# dict1 = dict(L1)
+# print(dict1,type(dict1))
+
+# # 元组转换成字典
+# T1 = (("你好","他是"),["今日","说法"])
+# dict1 = dict(T1)
+# print(dict1,type(dict1))
+
+#集合转换成字典,必须是二级类容器，并且第二级的容器要是元组类型且只能有两个元素
+S1 = {("和","小明去玩耍")}
+dict1 = dict(S1)
+print(dict1,type(dict1))
+
+
+
+
+
+
+#2-5
+#运算和运算符
+#算术运算
+# + - * /
+# + 法运算
+# num1 = 2
+# num2 = 3
+# print(num1+num2)
+#减法运算
+# num1 = 2
+# num2 = 3
+# print(num1 - num2)
+#乘法运算
+# num1 = 2
+# num2 = 3
+# print(num1 * num2)
+#除法运算
+# num1 = 2
+# num2 = 3
+# print(num1 / num2)
+
+#幂运算
+# num1 = 2
+# num2 = 4
+# print(num1 ** num2) #num1 的 num2  次幂
+
+#地板除 （取商数）
+# num1 = 3
+# num2 = 2
+# print(num1 // num2)
+
+#取余运算符
+# num1 = 8
+# num2 = 3
+# print(num1 % num2)
+
+
+
+
+
+
+#2-6
+#比较运算符（常用于判断） 得到的结果是bool值
+# >  <  >=  <=   ==  !=
+#大于比较
+# num1 = 1
+# num2 = 2
+# result = num1 > num2
+# print(result)
+
+#小于比较
+# num1 = 1
+# num2 = 2
+# result = num1 < num2
+# print(result)
+
+#大于等于
+# num1 = 7
+# num2 = 2
+# result = num1 >= num2
+# print(result)
+
+#小于等于
+# num1 = 2
+# num2 = 2
+# result = num1 <= num2
+# print(result)
+
+# ==
+# num1 = ["你好"]
+# num2 = ["你好"]
+# result = num1 != num2
+# print(result)
+
+#!=
+num1 = ["你好","世界"]
+num2 = ["你好"]
+result = num1 != num2
+print(result)
+
+
+
+
+#2-7
+#赋值运算
+# = += -= /= //= **=
+#赋值 =
+# num1 = 2
+
+# +=
+# num1 = 2
+# num1 += 6 # num1 = num1 + 6
+# print(num1)
+
+# -=
+# num1 = 2
+# num1 -= 3 # num1 = num1 - 3
+# print(num1)
+
+#/=
+# num1 = 2
+# num1 /= 3 #num1 = num1 / 3
+# print(num1)
+
+# *=
+# num1 = 2
+# num1 *= 5 # num1 = num1 * 5
+# print(num1)
+
+# **=
+# num1 = 2
+# # num1 **= 6 #num1 = num1 ** 6
+# # print(num1)
+
+# //=
+# num1 = 3
+# num1 //= 8 #num1 = num1 // 8
+# print(num1)
+
+# %=
+# num1 = 8
+# num1 %= 3 #num1 = num1 % 2
+# print(num1)
+
+
+#2-8
+#逻辑运算（布尔值之间的运算） 与或非
+#逻辑与运算 and   有假则假
+# result = True and False
+# print(result)
+
+#逻辑或运算 or 有真则真
+# result = True or False
+# print(result)
+
+#逻辑非运算  变性 真变假，假变真
+result = not False
+print(result)
+
+
+
+
+
+#2-9
+#进制转换
+#  0b 二进制转换成10进制
+# num1 = 0b1001
+# print(int(num1))
+
+#推算过程
+# 1*2^0 + 0*2^1 +0*2^2 +1*2^3
+# 1 + 0 + 0 + 8 = 9
+
+#0x 十六进制
+# num1 = 0x966
+# print(int(num1))
+#966 十六进制
+# 9*16^2 + 6*16^1  +6 * 16^0
+# 2304 + 96 + 6
+
+#八进制
+# num1 = 0o77
+# print(int(num1))
+#7 * 8 ^1 + 7 * 8^0
+#56 + 7 = 63
+
+#其他数据类型转成2进制
+#十进制转成2进制
+# num1 = 2
+# print(bin(num1))
+
+#八进制转成2进制
+# num1 = 0o71
+# print(bin(num1))
+
+#十六进制转成2进制
+# num1 = 0xa5
+# print(bin(num1))
+
+#拿1 和负一举例
+# 1 + (-1)
+#原码         #反码                #补码
+# 0 00000001    0 00000001           0 00000001
+# 1 00000001    1 11111110           1 11111111
+#                             0000 000000 0 00000
+
+#反码正数的反码与原码一致，正数的补码与原码一致  # 21
+#原码 就是 二进制数    正数原码，反码，补码是一样  0  00000010101 （正数）
+#负数  原码也是二进制数                           1  00000010101 （负数）
+# 反码                                           1  11111101010  （负数的反码）
+# 补码                                           1  11111101011  （负数的补码）
+
+
+
+#2-9wp
+#进制转换
+#  0b 二进制转换成10进制
+# num1 = 0b1101
+# print(int(num1))
+
+#推算过程
+# 1       0      1      1
+# 1*2^0 + 0*2^1 +1*2^2 +1*2^3
+# 1 + 0 + 4 + 8 = 9
+
+# #0x 十六进制
+# num1 = 0x966
+# print(int(num1))
+#966 十六进制
+# 9*16^2 + 6*16^1  +6 * 16^0
+# 2304 + 96 + 6
+
+
+#八进制
+# num1 = 0o76
+# print(int(num1))
+#7 * 8 ^1 + 6 * 8^0
+#56 + 6 = 62
+
+
+#其他数据类型转成2进制
+#十进制转成2进制
+# num1 = 2
+# print(bin(num1))
+
+#八进制转成2进制
+# num1 = 0o71
+# print(bin(num1))
+
+#十六进制转成2进制
+# num1 = 0xa5
+# print(bin(num1))
+
+
+
+
+#2-10
+#位运算
+#按位与运算
+# num1 = 2
+# num2 = 3
+# print(num1 & num2)
+# 0000010
+# 0000011
+# 0000010
+
+#按位或运算 |
+# num1 = 2
+# num2 = 3
+# print(num1 | num2)
+# 0000010    2
+# 0000011    3
+# 0000011    结果
+
+#按位非运算
+# print(~-1)  #取相反数后减1
+# print(~-6)
+# print(~-9)
+#0 0000111
+#1 1111000
+#1 0000111
+#1 0001000
+
+#按位异或运算
+# num1 = 7
+# num2 = 5
+# print(num1 ^ num2)
+#0 0000111
+#0 0000101
+#0 0000010
+
+#左移运算
+# num1 = 7
+# num2 = 5
+# print(num1 << num2)
+#0 0000111
+#0 11100000
+
+#右移运算
+# num1 = 15
+# num2 = 3
+# print(num1 >> num2)
+#   0000 000001
+
+
+
+
+
+#2-10wp
+# #位运算
+# num1 = 2
+# num2 = 3
+# #& 按位与运算符：参与运算的两个值,如果两个相应位都为1,则该位的结果为1,否则为0
+# print(num1 & num2)
+# #\ 按位或运算符：只要对应的二个二进位有一个为1时，结果位就为1。
+# print(num1 | num2)
+
+# #按位非运算
+# #~ 按位取反运算符：对数据的每个二进制位取反
+# print(~-1)  #取相反数后减1
+# print(~-6)
+# print(~-9)
+# print(~0)
+# print(~1)
+
+#按位异或运算
+#^ 按位异或运算符：当两对应的二进位相异时，结果为1
+# n1 = 7
+# print(bin(n1))
+# n2 = 5
+# print(bin(n2))
+# print(bin(n1 ^ n2))
+# print(n1 ^ n2)
+
+
+# #例2
+# num3 = 3
+# print(bin(num3))
+# print(num3)
+#
+# num4 = 6
+# print(bin(num4))
+# print(num4)
+#
+# print(bin(num3 ^ num4))
+# print(num3 ^ num4)
+
+
+# #例3
+# n5 = 10
+# print(n5)
+# print(bin(n5))
+#
+# n6 = 5
+# print(n6)
+# print(bin(n6))
+#
+# print(n5^n6)
+# print(bin(n5^n6))
+
+
+# #左移运算
+# num1 = 7
+# num2 = 5
+# print(num1 << num2)
+# # 0 0000111
+# # 0 11100000
+# n3 = 1
+# n4 = 3
+# print(n3 << n4)
+# # 1
+# # 1000
+
+#右移运算
+num1 = 8
+num2 = 3
+print(num1 >> num2)
+# 1000
+# 1
+
+
+
+#2-11
+#身份运算 is is not
+num1 = 1
+num2 = 1
+# print(id(num1))
+# print(id(num2))
+# str1 = "hello world"
+# str2 = "hello world"
+# print(id(str1))
+# print(id(str2))
+# result = str1 is str2
+# print(result)
+
+#is not 检测
+# str1 = "hello worl"
+# str2 = "hello world"
+# print(id(str1))
+# print(id(str2))
+# result = str1 is not str2
+# print(result)
+
+#成员检测 in not in
+#检测成员是否在字符串是以字符串是否是连续的为依据的
+# str1 = "今天是国际女王节"
+# result = "hh" not in str1
+# print(result)
+
+#list
+# list1 = ["你好",["天天","hello"],"田亮","芯蕊"]
+# result = ["天天","hello"] in list1
+# print(result)
+
+#字典  只检测字典的键
+dict1 = {"你好":"吴亦凡","我叫":"李雪秦","你看着灯":"亮不亮"}
+result = "吴亦凡" in dict1
+print(result)
+
+
+
+
 
 
 
