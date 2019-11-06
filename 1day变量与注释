@@ -34,6 +34,69 @@ print(1)
 #num类型又分为整型(int)，浮点型，bool值，复数类型
 #整型
 
+'''
+num1 = 1
+print(num1)
+print(type(num1))
+'''
+#浮点型 float
+'''
+num1 = 3.14
+print(num1)
+print(type(num1))
+'''
+#布尔值 True  False  bool
+'''
+num1 = False
+print(num1)
+print(type(num1))
+'''
+#复数类型 complex   实数 + 虚数（一个数的平方为负1）
+'''
+num1 = 3 + 7j
+print(num1)
+print(type(num1))
+'''
+#字符串 str  标志符号是引号
+'''
+str1 = '大家好，我是张文广，外号叫帅气的男人'
+print(str1)
+print(type(str1))
+'''
+#三引号声明一个字符串,可以换行
+'''
+str1 = """大家好，我是张文广，
+          外号叫帅气的男人"""
+print(str1)
+print(type(str1))
+'''
+
+#列表list  标志符号是 []   列表里的每一个元素是用逗号隔开的
+'''
+list1 = ["你好","世界"]
+print(list1)
+print(type(list1))
+'''
+#元组类型 tuple  标志符号是()，元素中间必须要有逗号
+'''
+tuple1 = (1,)
+print(tuple1)
+print(type(tuple1))
+'''
+#集合 set 数学中的集合(去重),无序,集合没有标志符号
+'''
+set1 = {"你好","世界","你好","全世界"}
+print(set1)
+print(type(set1))
+'''
+#字典 dict  键值对 字典的标志符号是{}
+
+'''
+dict1 = {"python":"世界上最强大的语言之一","兄弟连":"地球上最大的IT人才培养基地"}
+print(dict1)
+print(type(dict1))
+'''
+
 
 
 
