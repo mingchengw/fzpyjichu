@@ -1,0 +1,195 @@
+#2-1
+
+#容器类数据  str  盛水的，装东西的。。。
+#其他数据类型转换为列表
+#int float bool complex str
+#字符串转换成列表，把字符串里的每一个字符当作列表里的每一个元素
+'''
+int1 = "hello world"
+list1 = list(int1)
+print(list1)
+'''
+#元组tuple转换成列表,数据不变，格式改变
+'''
+tuple1 = (1,2,3)
+print(tuple1,type(tuple1))
+list1 = list(tuple1)
+print(list1,type(list1))
+'''
+#集合转换成列表，去重，随机排序
+'''
+set1 = {"你好","妇女节","再见","女生节","妇女节"}
+print(set1,type(set1))
+list1 = list(set1)
+print(list1,type(list1))
+'''
+
+#dict字典转换成列表 ，保留字典中的键作为列表里的元素
+dict1 = {"小学生":"哥哥给把枪","高中生":"放荡不羁爱自由","大学生":"浪上天","毕业了":"佛系"}
+list1 = list(dict1)
+print(list1)
+
+#2-1wp
+##字符串转换成列表，把字符串里的每一个字符当作列表里的每一个元素
+# int1 = 'hello'
+# L1 = list(int1)
+# print(L)
+
+##元组tuple转换成列表,数据不变，格式改变
+# T = (1,2,3)
+# print(T,type(T))
+# L2 = list(T)
+# print(L2,type(L2))
+
+# #集合转换成列表，去重，随机排序
+# set1 ={"你好","妇女节","再见","泼水节","妇女节"}
+# print(set1,type(set1))
+# L3 = list(set1)
+# print(L3,type(L3))
+
+
+#dict字典转换成列表 ，保留字典中的键作为列表里的元素
+dict1 = {"诸葛亮":"法师","赵云":"打野","鲁班":"射手"}
+L4 = list(dict1)
+print(L4)
+
+
+
+
+
+
+#2-2
+#其他数据类型转换为tuple元组() 元组里面的元素（数据）是不可改的
+#字符串转换为元组,字符串转换成元组，把字符串里的每一个字符当作元组里的每一个元素
+'''
+str1 = "今天是国际三八妇女节，为啥没三八男神节"
+tuple1 = tuple(str1)
+print(tuple1,type(tuple1))
+'''
+#列表转换成元组,就是改变了数据类型而已
+'''
+list1 = ["王继欣","王海明","王迅"]
+tuple1 = tuple(list1)
+print(tuple1,type(tuple1))
+'''
+#集合转换成元组，去重后随即排序
+'''
+set1 = {"小明","小黄","小黑","小花","小明"}
+tuple1 = tuple(set1)
+print(tuple1,type(tuple1))
+'''
+#字典转换成元组，保留字典中的键作为元组里的每一个元素
+dict1 = {"601":"python大神","613":"兄弟连教师","xdl":"老师都很帅"}
+print(type(dict1))
+tuple1 = tuple(dict1)
+print(tuple1,type(tuple1))
+
+#2-2wp
+# #字符串转换为元组,字符串转换成元组，把字符串里的每一个字符当作元组里的每一个元素
+# str1 = "今天是国际三八妇女节，为啥没三八男神节"
+# T1 = tuple(str1)
+# print(T1,type(T1))
+
+# #列表转换成元组,就是改变了数据类型而已
+# L1 = ['一','二','三']
+# T2 = tuple(L1)
+# print(T2,type(T2))
+
+# #集合转换成元组，去重后随即排序
+# set1 = {"小明","小黄","小黑","小花","小明"}
+# T3 = tuple(set1)
+# print(T3,type(T3))
+
+#字典转换成元组，保留字典中的键作为元组里的每一个元素
+dict1 = {"601":"python大神","613":"兄弟连教师","xdl":"老师都很帅"}
+print(type(dict1))
+T4 = tuple(dict1)
+print(T4,type(T4))
+
+
+
+
+
+#2-3
+#其他数据类型转换成集合
+#字符串转换成集合,把字符串里的每一个元素去重随机排序作为集合里的每一个元素
+'''
+str1 = "hello world"
+set1 = set(str1)
+print(set1,type(set1))
+'''
+#list转换为集合 去重随机排序
+'''
+list1 = ["python","java","php","h5","java"]
+set1 = set(list1)
+print(set1,type(set1))
+'''
+#元组转换成集合，去重随机排序
+'''
+tuple1 = ("金刚","不坏","狼","狼")
+set1 = set(tuple1)
+print(set1,type(set1))
+'''
+#字典键是唯一的，转换成集合后顺序随机
+dict1 = {"601":"python大神","613":"兄弟连教师","xdl":"老师都很帅","602":"python大神"}
+print(dict1)
+set1 = set(dict1)
+print(set1,type(set1))
+
+#2-3wp
+# #字符串转换成集合,把字符串里的每一个元素去重随机排序作为集合里的每一个元素
+# str1 = "hello"
+# S1 = set(str1)
+# print(S1,type(S1))
+
+# #list转换为集合 去重随机排序
+# L1 = ["python","java","php","h5","java"]
+# S1 = set(L1)
+# print(S1,type(S1))
+
+# #元组转换成集合，去重随机排序
+# T1 = ("金刚","不坏","狼","狼")
+# S2 = set(T1)
+# print(S2,type(S2))
+
+#字典键是唯一的，转换成集合后顺序随机
+dict1 ={"601":"python大神","613":"兄弟连教师","xdl":"老师都很帅","602":"python大神"}
+print(dict1)
+S3 = set(dict1)
+print(S3,type(S3))
+
+
+
+
+
+#2-4
+#其他数据类型转换成字典
+'''
+str1 = ""
+dict1 = dict(str1)
+print(type(dict1))
+'''
+#l列表转换成字典，如果要有意义，则必须是二级的列表，并且第二级里面必须只有两个元素才可以
+
+# list1 = [["红人","小花"],("小明","大红花")]
+# dict1 = dict(list1)
+# print(dict1,type(dict1))
+
+#元组转换成字典
+# tuple1 = (("你好","他是"),["今日","说法"])
+# dict1 = dict(tuple1)
+# print(dict1,type(dict1))
+
+#集合转换成字典,必须是二级类容器，并且第二级的容器要是元组类型且只能有两个元素
+set1 = {("和","小明去玩耍")}
+dict1 = dict(set1)
+print(dict1,type(dict1))
+
+
+#2-4wp
+
+
+
+
+
+
