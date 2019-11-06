@@ -1,0 +1,365 @@
+# 4-1
+
+'''
+while 条件（真/假）：
+    while区间代码
+'''
+'''
+#死循环
+while True:
+    print("开始循环")
+'''
+#控制循环次数
+# i = 0
+# while i < 10:
+#     i += 1
+#     print(i)
+#     i += 1
+
+#打印一行的星星
+# i = 1
+# while i < 11:
+#     print("*",end="")
+#     i += 1
+
+#打印十行十列的星星  100个星星
+#1-10 第一行，11-20，21-30，31，41，51，61，71
+'''
+i = 1
+while i < 101:
+    print("*",end="")
+    if i % 10 == 0:
+        print()
+    i += 1
+'''
+#隔列变色
+'''
+i = 1
+while i < 101:
+    if i % 2 == 0:
+        print("*",end="")
+    else:
+        print("#",end="")
+    if i % 10 == 0:
+        print()
+    i += 1
+'''
+#隔行变色
+'''
+i = 1
+while i < 101:
+    #找规律
+    if (i-1) // 10 % 2 == 0:
+        print("*",end="")
+    else:
+        print("#",end="")
+    if i % 10 == 0:
+        print()
+    i += 1
+'''
+#单行实现隔行变色 2
+'''
+i = 1
+j = 1
+while i < 101:
+    #找规律
+    if j % 2 == 0:
+        print("*",end="")
+    else:
+        print("#",end="")
+    if i % 10 == 0:
+        print()
+        j += 1
+    i += 1
+'''
+# 0 - 100
+# 0 1 2 3 4 5 6 7 8 9
+# 10 11 12 13 14 15 16 17 18 19
+#单层循环实现隔行变色 3
+'''
+num1 = 0
+while num1 < 100:
+    #规律
+    if num1 % 20 < 10:
+        print("*", end="")
+    else:
+        print("#", end="")
+
+    if num1 % 10 == 9:
+        print()
+    num1 += 1
+'''
+#双层循环
+#实现 10行10列的星星
+'''
+i = 0
+while i < 10:
+    j = 0
+    while j < 10:
+        print("*", end="")
+        j += 1
+    print()
+    i += 1
+'''
+#用双层循环实现隔行变色星星
+'''
+i = 0
+while i < 10:
+    j = 0
+    while j < 10:
+        if i % 2 == 0:
+            print("*", end="")
+        else:
+            print("#",end="")
+        j += 1
+    print()
+    i += 1
+'''
+#双层循环实现隔列变色星星
+'''
+i = 0
+while i < 10:
+    j = 0
+    while j < 10:
+        if j % 2 == 0:
+            print("*", end="")
+        else:
+            print("#",end="")
+        j += 1
+    print()
+    i += 1
+
+'''
+'''
+#隔行隔列的星星
+i = 0
+while i < 10:
+    j = 0
+    while j < 10:
+        if i % 2 == 0: #判断是否偶数行
+            if j % 2 == 0: #判断是否偶数列
+                print("*", end="")
+            else: #不是偶数列的情况
+                print("#",end="")
+        else:#不是偶数行的情况
+            if j % 2 == 0: # 在奇数行的情况下判断是否是偶数列
+                print("#", end="")
+            else: #奇数行的情况下不是偶数列
+                print("*",end="")
+        j += 1
+    print()
+    i += 1
+'''
+#99乘法表
+# i 1-9   j 1-9
+'''
+i = 1
+while i < 10:
+    j = 1
+    while j <= i:
+        print(i,"*",j,"=",i*j,end="  ")
+        if i == j:
+            print()
+        j += 1
+    i += 1
+'''
+#99乘法表2
+'''
+i = 1
+while i < 10:
+    j = 1
+    while j < 10:
+        print(i,"*",j,"=",i*j,end="  ")
+        j += 1
+        if j > i:
+            break
+    print()
+    i += 1
+'''
+#for
+'''
+for i in range(10):
+    print("*",end="")
+'''
+#for循环实现10行十列的星星
+'''
+for i in range(100):
+    print("*",end="")
+    if i % 10 == 9:
+        print()
+'''
+'''
+#双层循环实现十行十列星星
+for num1 in range(10):
+    for num2 in range(10):
+        print("*",end="")
+    print()
+'''
+
+#for循环双层循环实现99乘法表
+
+# for i in range(1,10):
+#     for j in range(1,10):
+#         print(i,"*",j,"=",i*j,end="   ")
+#         if j >= i:
+#             break
+#     print()
+
+#for循环 两层循环实现99乘法表
+# for i in range(1,10): #1 2
+#     for j in range(1,i+1): # 1-2 ,1-3
+#         print(i,"*",j,"=",i*j,end="  ")
+#     print()
+'''
+while True:
+    say = input("请输入你想说的话：")
+    if say == "你好世界":
+        print("你好程序员")
+    elif say == "你好地球":
+        print("你好外星人")
+    else:
+        print("你说的是啥？")
+        break
+'''
+#for循环主要用于遍历容器,遍历容器需要遵循容器本身的特性
+#for 循环遍历字典常规手段只能遍历字典中的键
+#for 变量 in 容器（str,list,tuple,set,dict,range()）
+'''
+set1 = {"茕茕孑立","踽踽独行","绵绵瓜瓞","奉为圭臬"}
+for chengyu in set1:
+    print(chengyu)
+'''
+'''
+dict1 = {"行者":"武松","花和尚":"沙僧","活阎罗":"张文广"}
+for key,value in dict1.items():
+    print(key)
+    print(value)
+'''
+
+
+
+
+
+#4-2
+#函数
+'''
+def func():
+    print("hello world")
+    print("世界你好")
+    print("你好地球")
+#调用函数
+#方式1 （执行过程函数）
+# func()
+'''
+#方式2
+# say = func()  #func()   变量  = func()
+#func()
+# func()
+# func()
+
+#内建函数
+# print()
+# type()
+# int()
+#参数 --》形参，实参
+#形参 ： 形式上的参数，实参：实际的参数
+# say 是形参，形参是指定义函数时候写的参数
+#say  = 1
+#实参和形参的位置要一一对应，有多少形参就要传多少实参
+# def func(say,jump):
+#     print(say)
+#     print(jump)
+# #1 是实参，是调用函数时穿的参数
+# func("你好","跳起来")
+
+#形参和实参的位置一定要一一对应好！
+# def func(name,wear):
+#     print(name,"穿着高跟鞋")
+#     print(wear,"套着麻袋")
+#  #1 是实参，是调用函数时穿的参数
+# func("正在穿衣服：","小明")
+#形参的分类：1.必选参数 2.默认参数，3.收集参数 4.命名关键字参数 5.收集关键字参数
+'''
+def func(cloth,kuzi):
+    print(cloth)
+    print(kuzi)
+#调用函数
+func("阿迪达斯","CK")
+'''
+#就是为了求平方
+#num2 = 2这个形参叫默认参数,如果不传递对应实参，则按照已定好的默认值。
+'''
+def ping(num1,num2 = 2):
+    print(num1 ** num2)
+#调用函数
+ping(2,3)
+'''
+#收集参数，收集多余的位置参数，并形成一个元组,
+'''
+def func(p_name,n_name,*name):
+    print(p_name)
+    print(n_name)
+    print(name)
+#调用
+func("小明","小芳","小花","小红")
+'''
+#收集关键字参数(收集关键字参数并组成字典)
+#收集多余的关键字参数
+# def func(name,*args,sex,**arg):
+#     print(name)
+#     print(args)
+#     print(sex)
+#     print(arg)
+# #调用函数
+# func("小明","小芳",sex="男",like="18_b_gril",eat="狂吃狂吃")
+
+#命名关键字参数  *  为了区分默认参数和命名关键字参数，*后面的参数就不要给默认值
+# def func(name,n = "小花",**kwargs):
+#     print(name)
+#     print(n)
+#     print(kwargs)
+# #调用函数
+# func("小明",run="一起运动下",drink="82年的雪碧")
+
+#形参的位置:1.位置参数 2.默认参数，3.收集参数 4.命名关键字参数 5.关键字收集参数
+#参数的位置,形参的位置不要变
+'''
+def func(name,age,sex="男",*arg,**kwargs):
+    print(name)
+    print(sex)
+    print(arg)
+    print(age)
+    print(kwargs)
+#调用函数
+func("小明","小花",age=89,sw=(90,90,190))
+'''
+#实参：普通实参  关键字实参  位置和形参的位置一一对应就好
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
