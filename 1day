@@ -1,0 +1,11 @@
+#变量名 = 变量值
+# bl1 = 1
+
+#多变量赋值
+#变量1,变量名2... = 变量值1,变量值2...
+bl1,bl2 = 1,2
+
+#系统保留关键字
+import keyword
+key_word = keyword.kwlist
+print(key_word)
