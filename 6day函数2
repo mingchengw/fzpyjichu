@@ -120,6 +120,409 @@ print(result)
 
 
 
+# #6-2wp
+# #递归函数  就是在函数内部自己调用自己的函数就叫递归函数
+#
+# def digui(num):
+#     #第一步，打印
+#     print(num)
+#     #第二部：判断
+#     if num > 0:
+#         digui(num-1)
+#     else:
+#         print("================")
+#     #第三部，打印num
+#     print(num)
+# #调用函数
+# digui(4)
+
+
+#斐波那契数列
+# 1，1，2，3，5，8，13，21，34，55.....
+def feibo(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    else:
+        return feibo(n-1) + feibo(n-2)
+result = feibo(30)
+print(result)
+#递归的优点就是可以用最简洁的代码完成我们相应的计算
+#缺点：不能调用本身太多次，否咋运行幅度会慢，甚至导致栈溢出（一般是1000层）
+
+
+
+
+
+#6-3
+#闭包函数
+#内函数使用外函数的变量，并且外函数把内函数return出来，内函数就叫闭包函数
+#
+'''
+def out(num):
+    def inner():
+        # print(num * num)
+        return num + num
+    return inner
+#调用外函数
+func = out(6) #func就是inner
+print(func)
+'''
+#闭包函数
+'''
+def out():
+    num1 = 1
+    def inner():
+        nonlocal num1
+        num1 += 1
+        print(num1)
+    return inner
+#调用外函数
+num = out() #num=inner
+num()
+'''
+#大王卡消费的模拟过程
+# num1 = 0
+# def dawang():
+#     global num1
+#     num1 += 1
+#     print(num1)
+# dawang()
+# dawang()
+# num1 = 1000
+# dawang()
+
+#闭包的意义和好处：闭包可以优先使用外函数中的变量,并对闭包中的值起到了封装保护的作用.
+# 外部无法访问.
+
+
+#初步接触到封装的概念
+'''
+num1 = 0
+def dawang():
+    num1 = 0
+    def inner():
+        nonlocal num1
+        num1 += 1
+        print(num1)
+    return inner
+#调用外层函数
+result = dawang() #result = inner
+result()
+result()
+result()
+num1 = 100
+result()
+result()
+
+
+
+'''
+#变量的作用域
+#全局变量和局部变量
+# num1 = 3 #全局变量
+# def func():
+#     num1 += 1
+#     def func2():
+#         nonlocal num1
+#         num1 = 3
+#     func2()
+#     print(num1) # 2
+# func()
+# print(num1) # 3
+
+#有返回值的函数
+# def func(num):
+#     print("王思聪有个好爸爸，王健林是我的偶像")
+#     return num
+# say = func("马云是淘宝的开创人，背后站着千千万万的剁手党")
+# print(say)
+
+#闭包函数
+'''
+var = 3
+def bibao():
+    var = 1
+    def inner():
+        nonlocal var
+        var += 1
+        print(var)
+    return inner
+say = bibao()
+say()
+say()
+
+print("=========================")
+var += 2
+print(var)
+'''
+
+
+
+
+
+
+#6-3wp
+
+# #内函数使用外函数的变量，并且外函数把内函数return出来，内函数就叫闭包函数
+# def out(n):
+#     def inner():
+#         return n*n
+#     return inner()
+# func = out(6) #func就是inner
+# print(func)
+
+# #闭包函数
+# def out():
+#     n1 = 1
+#     def inner():
+#         nonlocal n1
+#         n1 += 1 #n1=2
+#         print(n1)
+#     return inner
+# #调用外函数
+# n = out() #n=inner
+# n()
+# #闭包的意义和好处：闭包可以优先使用外函数中的变量,并对闭包中的值起到了封装保护的作用.
+
+# #大王卡消费的模拟过程
+# n1 = 0
+# def dawang():
+#     global n1
+#     n1 += 1
+#     print(n1)
+# dawang()
+# dawang()
+# n1 = 1000
+# dawang()
+
+
+
+# #初步接触到封装的概念
+# n1 = 0
+# def dawang():
+#     n1 = 0
+#     def inner():
+#         nonlocal n1
+#         n1 += 1
+#         print(n1)
+#     return inner
+# #调用外层函数
+# result = dawang() #result = inner
+# result() #1
+# result() #2
+# result() #3
+# n1 = 100
+# # result() #4
+# # result() #5
+
+
+
+# #有返回值的函数
+# def func(num):
+#     print("王思聪有个好爸爸，王健林是我的偶像")
+#     return num
+# say = func("马云是淘宝的开创人，背后站着千千万万的剁手党")
+# print(say)
+
+
+
+#闭包函数
+var = 5
+def bibao():
+    var = 1
+    def inner():
+        nonlocal var
+        var += 1
+        print(var)
+    return inner
+say = bibao()
+say()
+say()
+
+print("=========================")
+var += 2
+print(var)
+
+
+
+
+
+
+# 6-4
+# num1 是百位数
+# num2 是十位数
+# num3 是个位数
+# i = 0
+# for num1 in range(1,5):
+#     for num2 in range(1,5):
+#         for num3 in range(1,5):
+#             if num1 != num2 and num1 != num3 and num2 != num3:
+#                 print(num1*100 + num2*10 + num3)
+#                 i += 1
+# print("一共有",i,"个数字组合")
+
+#百文买百鸡
+#今有鸡翁一，值钱三；鸡母一，值钱一；鸡鶵二，值钱一。凡百钱买鸡百只，且各必买
+# 问鸡翁、母、鶵各几何？
+n = 0
+for gj in range(1,33):
+    for mj in range(1,100):
+        xj = 100 - gj - mj
+        if gj*3 + mj + xj/2 == 100:
+            print("公鸡:",gj,"母鸡：",mj,"小鸡:",xj)
+            print()
+            n += 1
+print("共有",n,"种组合")
+
+
+
+
+# # 6-4wp
+# # num1 是百位数
+# # num2 是十位数
+# # num3 是个位数
+# i = 0
+# for num1 in range(1,5):
+#     for num2 in range(1,5):
+#         for num3 in range(1,5):
+#             if num1 != num2 and num1 != num3 and num2 != num3:
+#                 print(num1*100 + num2*10 + num3)
+#                 i += 1
+# print("一共有",i,"个数字组合")
+
+
+
+#百文买百鸡
+#今有鸡翁一，值钱三；鸡母一，值钱一；鸡鶵二，值钱一。凡百钱买鸡百只，且各必买
+# 问鸡翁、母、鶵各几何？
+#1gj=3,1mj=2,1xj=0.5
+n = 0
+for gj in range(1,33):
+    for mj in range(1,100):
+        xj = 100 - gj - mj
+        if gj*3 + mj + xj/2 == 100:
+            print("公鸡:",gj,"母鸡：",mj,"小鸡:",xj)
+            print()
+            n += 1
+print("共有",n,"种组合")
+
+
+
+
+
+
+
+#6-5
+#迭代器
+from collections import Iterable,Iterator
+#list1 = [1,2,3,4,5,6]
+# result = isinstance(list1,list)
+# print(result)
+'''
+result = isinstance(list1,Iterable)
+print(result)
+print("======================")
+res = isinstance(list1,Iterator)
+print(res)
+'''
+'''
+result = isinstance(range(10),Iterable)
+print(result)
+print("======================")
+res = isinstance(range(10),Iterator)
+print(res)
+'''
+'''
+list1 = [1,2,3,4,5,6,7,8,9,10]
+result = iter(list1)
+print(result)
+print("=============")
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+
+'''
+'''
+#可以用数据类型转换的方法转换迭代器
+list1 = [1,2,3,4,5,6,7,8,9,10]
+result = iter(list1)
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+'''
+
+
+
+#6-5wp
+#迭代器
+#isinstance() 函数来判断一个对象是否是一个已知的类型
+#isinstance() 会认为子类是一种父类类型，考虑继承关系。如果要判断两个类型是否相同推荐使用 isinstance()。
+
+# from collections import Iterable,Iterator
+# list1 = [1,2,3,4,5,6]
+# result = isinstance(list1,list)
+# print(result) #True
+#
+# result = isinstance(list1,Iterable)
+# print(result) #True
+# print("======================")
+# #判断是不是迭代器，用Iterator
+# res = isinstance(list1,Iterator)
+# print(res) #False
+# res2 = isinstance( (x for x in range(10)), Iterator)
+# print(res2) #True
+# 总结：
+# 凡是可以for循环的，都是Iterable
+# 凡是可以next()的，都是Iterator
+# 集合数据类型如list，truple，dict，str，都是Itrable不是Iterator，
+# 但可以通过iter()函数获得一个Iterator对象
+# Python中的for循环就是通过next实现的
+
+
+# list1 = [1,2,3,4,5,6,7,8,9,10]
+# result = iter(list1)
+# print(result)
+# print("=============")
+# print(next(result))
+# print(next(result))
+# print(next(result))
+# print(next(result))
+
+# #例1
+# list=[1,2,3,4]
+# it = iter(list)    # 创建迭代器对象
+# print (next(it))   # 输出迭代器的下一个元素
+# print (next(it))
+#
+# #例2
+# list=[1,2,3,4]
+# it = iter(list)    # 创建迭代器对象
+# for x in it:
+#     print (x, end=" ")
+
+#可以用数据类型转换的方法转换迭代器
+list1 = [1,2,3,4,5,6,7,8,9,10]
+result = iter(list1) #创建迭代器对象
+print(next(result)) #输出迭代器的下一个元素
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
+print(next(result))
 
 
 
@@ -128,6 +531,94 @@ print(result)
 
 
 
+#6-6
+def digui(num):
+    #第一步，打印
+    print(num)
+    #第二部：判断
+    if num > 0:
+        digui(num-1)
+    else:
+        print("================")
+    #第三部，打印num
+    print(num)
+#调用函数
+digui(3)
+
+'''
+def digui(3):
+    #第一步，打印
+    print(3)
+    #第二部：判断
+    if 3 > 0:
+        digui(3-1)  调用digui（2）
+    #第三部，打印num
+    print(3) #必须等digui(2)执行完
+#调用函数
+digui(3)
+# digui（3）函数还没有执行完
+
+def digui(2):
+    #第一步，打印
+    print(2)
+    #第二部：判断
+    if 3 > 0:
+        digui(2-1)  调用digui（1）
+    #第三部，打印num
+    print(2) #肯定是2，但不能输出必须等digui(1)执行完
+#调用函数
+digui(2)
+# digui（2）函数还没有执行完
+
+
+def digui(1):
+    #第一步，打印
+    print(1)
+    #第二部：判断
+    if 1 > 0:
+        digui(1-1)  调用digui（0）
+    #第三部，打印num
+    print(1) #肯定是1，但不能输出,必须等digui(0)执行完
+#调用函数
+digui(1) 还没有执行完
+# digui（1）
+
+def digui(0):
+    #第一步，打印
+    print(0)
+    #第二部：判断
+ 
+    else:
+        print("================")
+    #第三部，打印num
+    print(0) #肯定是1，但不能输出,必须等digui(0)执行完
+#调用函数
+digui(0) 还没有执行完
+
+
+
+
+'''
+3
+2
+1
+0
+=============
+0
+1
+2
+3
+
+
+# 6-6wp
+def digui(n):
+    print(n)
+    if n>0:
+        digui(n-1)
+    else:
+        print('==============')
+    print(n)
+digui(3)
 
 
 
