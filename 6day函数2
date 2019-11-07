@@ -1,0 +1,138 @@
+#6-1
+#求1+2+...+100的和
+n = 0
+for i in range(1,101):   #100
+    n += i  #n = n + i
+    print(n)
+
+
+#6-2
+#递归函数  就是在函数内部自己调用自己的函数就叫递归函数
+
+def digui(num):
+    #第一步，打印
+    print(num)
+    #第二部：判断
+    if num > 0:
+        digui(num-1)
+    else:
+        print("================")
+    #第三部，打印num
+    print(num)
+#调用函数
+digui(4)
+
+
+
+'''
+def digui(4):
+    #第一步，打印
+    print(4)   #第一步：打印4
+    #第二部：判断
+    if 4 > 0:
+        digui(4-1) digui(3)  #调用digui(3)
+    print("================")
+    #第三部，打印num
+    print(num) #绝对应该是4
+#调用函数
+digui(4)
+
+def digui(3):
+    #第一步，打印
+    print(3)   #第一步：打印4,3
+    #第二部：判断
+    if 3 > 0:
+        digui(3-1) #调用digui(2)
+    print("================")
+    #第三部，打印num
+    print(num)  # 3
+
+def digui(2):
+    #第一步，打印
+    print(2)   #第一步：打印4,3，2
+    #第二部：判断
+    if 2 > 0:
+        digui(2-1) #调用digui(1)
+    print("================")
+    #第三部，打印num
+    print(num)  # 2
+
+def digui(1):
+    #第一步，打印
+    print(1)   #第一步：打印4,3，2，1
+    #第二部：判断
+    if 1 > 0:
+        digui(1-1) #调用digui(0)
+    print("================")
+    #第三部，打印num
+    print(num)  # 1
+
+def digui(0):
+    #第一步，打印
+    print(0)   #第一步：打印4,3，2，1，0       
+    print("================")   # =======  
+    #第三部，打印num
+    print(num)  0
+'''
+#斐波那契数列
+# 1，1，2，3，5，8，13，21，34，55.....
+def feibo(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    else:
+        return feibo(n-1) + feibo(n-2)
+result = feibo(30)
+print(result)
+
+'''
+def feibo(5):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 1
+    else:
+        return feibo(n-1) + feibo(n-2)  1
+    :   feibo(4) + feibo(3)
+    :   feibo(3) + feibo(2)
+    :   feibo(2) + 1 (1 + 1 + 1) + (1+1)
+    （1 + 1）    
+result = feibo(5)
+print(result)
+'''
+# def digui(num):
+# #     #第一步，打印
+# #     print(num)
+# #     #第二部：判断
+# #     if num < 0:
+
+# #         digui(num-1) #累计1000层，会导致栈溢出错误
+# #     else:
+# #         print("================")
+# #     #第三部，打印num
+# #     print(num)
+# # #调用函数
+# # digui(-1)
+
+#递归的优点就是可以用最简洁的代码完成我们相应的计算
+#缺点：不能调用本身太多次，否咋运行幅度会慢，甚至导致栈溢出（一般是1000层）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
