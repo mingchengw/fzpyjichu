@@ -1,1 +1,297 @@
+#7-1fuxi
+
+#7-2
+#lambda 表达式
+#函数的另外一种表现方式，又叫匿名函数
+'''
+def cheng(x,y):
+    print("吃饭功能")
+    print("洗澡功能")
+    return x * y
+res = cheng(2,3)
+print(res)
+print("==============")
+#转换成lambda表达式
+res = lambda x,y: x * y
+print(res(3,3))
+#常用于数据清洗
+'''
+'''
+def name(sex):
+    if sex == "男":
+        return "man"
+    else:
+        return "notman"
+res = name("女王大人")
+print(res)
+print("=========================")
+
+result = lambda sex:"man" if sex == "男" else "notman"
+resu = result("张文光")
+print(resu)
+'''
+'''
+def cheng(x,y):
+    print(x * y)
+res = cheng(2,3)
+print(res)
+print("================")
+res = lambda x,y: print(x * y)
+print(res(3,3))
+'''
+#lambda表达式自带return
+
+
+
+
+#7-2wp
+#lambda 表达式
+#函数的另外一种表现方式，又叫匿名函数
+
+# def cheng(x,y):
+#     return x*y
+# res = cheng(2,3)
+# print(res)
+#
+# print("="*10)
+#
+# res = lambda x,y:x*y
+# print(res(3,3))
+
+
+# def name(sex):
+#     if sex == '男':
+#         return 'man'
+#     else:
+#         return 'notman'
+# res = name('女王大人')
+# print(res)
+#
+# res = lambda sex:'man' if sex == '男' else 'notman'
+# r = res('男')
+# print(r)
+
+
+#lambda表达式自带return
+res = lambda x,y: x * y
+print(res(3,3))
+print('='*10)
+res = lambda x,y: print(x * y)
+res(3,4)
+print('='*10)
+res = lambda x,y: print(x * y)
+print(res(3,3))
+
+
+
+
+#7-3
+#内建函数
+#abs() 返回一个数的绝对值
+'''
+num1 = -1
+res = abs(num1)
+print(res)
+print(abs(-2))
+'''
+#学习函数：1.函数的功能 2.函数的参数 3.函数的返回值
+
+#sum()   计算一个容器的数据的和
+#功能：求和 2.容器 3.和
+'''
+num = range(1,101)
+res = sum(num)
+print(res)
+print("=====================")
+print(sum(range(1,101)))
+'''
+#max 获取最大值
+'''
+list1 = [1,2,3,998,4,5,6]
+res = max(list1)
+print(res)
+'''
+#max数学相关的函数，虽然其他数据不会报错，但是不建议使用
+'''
+res = max("你好","你好吗","张文广","张张张")
+print(res)
+'''
+#pow计算n次方
+# print(pow(1.5,4))
+
+#round（）四舍五入
+# print(round(3.45))
+
+#ord() 将字符转换为ascii码
+# res = ord('a')
+# print(res)
+#chr() 将a..转换为字符
+# res = chr(122)
+# print(res)
+
+#bytes类型
+'''
+str1 = "邱运财鲁航"
+res = str1.encode() #编码过程
+print(res)
+'''
+#解码
+'''
+by = b'\xe9\x82\xb1'
+print(type(by))
+res = by.decode() #解码
+print(res)
+'''
+
+
+
+
+#7-3wp
+#内建函数
+#abs() 返回一个数的绝对值
+# n = -1
+# nn = abs(n)
+# print(nn)
+
+# def abs_wp(n):
+#     n = n*-1 if n<0 else n
+#     print(n)
+# abs_wp(-1)
+# abs_wp(23)
+# abs_wp(-100)
+#
+# print('='*10)
+#
+# res = lambda n: n*-1 if n<0 else n
+# print(res(-200))
+
+
+# #sum()   计算一个容器的数据的和
+# #功能：求和 2.容器 3.和
+# n = range(1,101)
+# res = sum(n)
+# print(res)
+# print("=====================")
+# print(sum(range(1,101)))
+# print("=====================")
+# def sum_wp(n):
+#     total = 0
+#     for i in range(1,n+1):
+#         total += i
+#     print(total)
+# sum_wp(100)
+
+
+# #max 获取最大值
+# list1 = [1,2,3,998,4,5,6]
+# res = max(list1)
+# print(res)
+#
+# #max数学相关的函数，虽然其他数据不会报错，但是不建议使用
+# res = max("你好","你好吗","张文广","张张张")
+# print(res)
+#
+# #pow计算n次方
+# print(pow(1.5,4))
+#
+# #round（）四舍五入
+# print(round(3.45))
+# print(round(3.45678,2))
+
+#ord() 将字符转换为ascii码
+res = ord('a')
+print(res)
+#chr() 将a..转换为字符
+res = chr(122)
+print(res)
+
+#bytes类型
+#bytes 函数返回一个新的 bytes 对象，该对象是一个 0 <= x < 256 区间内的整数不可变序列。
+str1 = "邱运财鲁航"
+res = str1.encode() #编码过程
+print(res)
+
+print('='*15)
+
+#编码
+str1 = "邱"
+res = str1.encode() #编码过程
+print(res)
+#解码
+by = b'\xe9\x82\xb1'
+res = by.decode() #解码
+print(res)
+
+
+
+
+
+
+
+#7-4
+#高阶函数：可以把函数作为参数传递的函数叫高阶函数
+#sorted:从小到大排序,得到新的列表
+'''
+list1 = {1,2,3,4,5,6,7}
+def func(n):
+    return n % 2  # 1,0,1,0,1,0,1
+res = sorted(list1,key=func)
+print(res)
+print("============================")
+#sorted
+result = sorted([2,1,5,3,7,10],reverse=True)
+print(result)
+'''
+#map()
+'''
+list1 = [3,4,1,2,5,6,7]
+def func(n):
+    return n * 5
+res = map(func,list1)
+print(type(res))
+
+for i in res:
+    print(i)
+# 
+# lists = list(res)
+# print(lists)
+'''
+#reduce使用前必须先导包
+'''
+from functools import reduce
+# list1 = [1,2,3,4,5,6,7]
+def func(num1,num2):
+    return num1 + num2
+res = reduce(func,range(1,101))
+print(res)
+'''
+#
+# filter() 过滤数据
+list1 = [3,1,2,5,7,6,4]
+def func(n):
+    return n % 2 == 0
+res = filter(func,list1)
+# print(next(res))
+# print(next(res))
+# print(next(res))
+# for i in res:
+#     print(i)
+list2 = list(res)
+print(list2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
